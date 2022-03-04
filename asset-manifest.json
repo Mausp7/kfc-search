@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/kfc-search/static/css/main.e6c13ad2.css",
-    "main.js": "/kfc-search/static/js/main.e1933a2e.js",
+    "main.css": "/kfc-search/static/css/main.711e2e95.css",
+    "main.js": "/kfc-search/static/js/main.0e111dc6.js",
+    "static/media/KFC-logo.png": "/kfc-search/static/media/KFC-logo.129350938ac67c522c71.png",
     "index.html": "/kfc-search/index.html",
-    "main.e6c13ad2.css.map": "/kfc-search/static/css/main.e6c13ad2.css.map",
-    "main.e1933a2e.js.map": "/kfc-search/static/js/main.e1933a2e.js.map"
+    "main.711e2e95.css.map": "/kfc-search/static/css/main.711e2e95.css.map",
+    "main.0e111dc6.js.map": "/kfc-search/static/js/main.0e111dc6.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.e1933a2e.js"
+    "static/css/main.711e2e95.css",
+    "static/js/main.0e111dc6.js"
   ]
 }

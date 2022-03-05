@@ -107,28 +107,30 @@ function App() {
 						</FormControl>
 					</CardContent>
 				</Card>
-				<div className="links">
-					<p>{link}</p>
-					<a href={link} target="_blank" rel="noreferrer">
-						<Button
-							variant="contained"
-							disabled={code.length !== 7}
-							style={{ margin: 10 }}
-						>
-							Megnyit
-						</Button>
-					</a>
-					<p>{altLink}</p>
-					<a href={altLink} target="_blank" rel="noreferrer">
-						<Button
-							variant="contained"
-							disabled={code.length !== 7}
-							style={{ margin: 10 }}
-						>
-							Megnyit
-						</Button>
-					</a>
-				</div>
+				{code.length === 7 && (
+					<div className="links">
+						<p>{link}</p>
+						<a href={link} target="_blank" rel="noreferrer">
+							<Button
+								variant="contained"
+								disabled={code.length !== 7}
+								style={{ margin: 10 }}
+							>
+								Megnyit
+							</Button>
+						</a>
+						<p>{altLink}</p>
+						<a href={altLink} target="_blank" rel="noreferrer">
+							<Button
+								variant="contained"
+								disabled={code.length !== 7}
+								style={{ margin: 10 }}
+							>
+								Megnyit
+							</Button>
+						</a>
+					</div>
+				)}
 			</section>
 		</div>
 	);

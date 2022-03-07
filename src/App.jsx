@@ -16,6 +16,7 @@ import DateAdapter from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DatePicker } from "@mui/lab";
 import logo from "./resources/KFC-logo.png";
+import huLocale from "date-fns/locale/hu";
 
 function App() {
 	const presentDate = new Date();
@@ -42,7 +43,13 @@ function App() {
 				<h1>KFC sajátoldalas-rendelés kereső</h1>
 			</header>
 			<section className="input">
-				<Card style={{ maxWidth: 310, padding: 10 }}>
+				<Card
+					style={{
+						maxWidth: 320,
+						padding: 10,
+						boxShadow: "5px 5px 15px rgba(0,0,0,0.3)",
+					}}
+				>
 					<Typography variant="h5" align="center">
 						Hurrier link generátor
 					</Typography>
@@ -71,7 +78,10 @@ function App() {
 								</Grid>
 
 								<Grid item xs={12}>
-									<LocalizationProvider dateAdapter={DateAdapter}>
+									<LocalizationProvider
+										dateAdapter={DateAdapter}
+										locale={huLocale}
+									>
 										<DatePicker
 											label="Rendelési dátum"
 											orientation="landscape"
@@ -79,7 +89,9 @@ function App() {
 											maxDate={presentDate}
 											required
 											onChange={(newValue) => setDate(newValue)}
-											renderInput={(params) => <TextField {...params} />}
+											renderInput={(params) => (
+												<TextField {...params} style={{ width: "100%" }} />
+											)}
 										/>
 									</LocalizationProvider>
 								</Grid>

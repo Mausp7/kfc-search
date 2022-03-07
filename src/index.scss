@@ -57,7 +57,7 @@ body {
 }
 
 #root {
-	max-width: 850px;
+	max-width: 1000px;
 	min-height: 100vh;
 
 	margin: 0 auto;
@@ -94,15 +94,25 @@ body {
 
 	section.input {
 		display: flex;
+
 		@media screen and (max-width: 650px) {
 			flex-direction: column;
 		}
 
 		div.links {
+			width: calc(100% - 320px);
+
+			@media screen and (max-width: 650px) {
+				width: 100%;
+			}
+
 			padding: 20px;
+			flex-shrink: 1;
 
 			p {
 				margin: 10px;
+
+				overflow-wrap: break-word;
 			}
 		}
 	}

@@ -63,16 +63,17 @@ function App() {
 										label="Rendelésazonosító"
 										placeholder="pl: ABCDEFG"
 										helperText={
-											code.length !== 7
-												? `Még ${7 - code.length} karakter.`
-												: null
+											code.length < 7
+												? `Még ${7 - code.length} karakter szükséges.`
+												: code.length > 7
+												? "Túl hosszú azonosító."
+												: "Megfelelő azonosító."
 										}
 										error={code.length > 7}
 										value={code}
-										onChange={(e) => {
-											if (e.target.value.length < 8)
-												setCode(e.target.value.toUpperCase());
-										}}
+										onChange={(e) =>
+											setCode(e.target.value.trim().toUpperCase())
+										}
 										variant="outlined"
 									/>
 								</Grid>

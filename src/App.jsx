@@ -28,6 +28,7 @@ function App() {
 	const [date, setDate] = useState(presentDate);
 	const [code, setCode] = useState("");
 	const [help, setHelp] = useState(false);
+	const [footerVis, setFooterVis] = useState(true);
 
 	const link = `https://hu.eu.logisticsbackoffice.com/dispatcher/order_details/${orderScource}%2FD%2F${date
 		.toISOString()
@@ -154,26 +155,41 @@ function App() {
 					</div>
 				)}
 			</section>
-			<footer>
-				<div>
-					{help && (
-						<p>
-							Ha a rendelés nem tölt be, kérlek ellenőrizd, hogy be vagy-e
-							jelentkezve Hurrier-be, a rendelés dátumát, illetve próbáld ki a
-							másik rendelési platformmal is. <br />
-							Bugokkal és fejlesztési javaslatokkal keresd @Árcsi-t Slacken.
-						</p>
-					)}
-					<Button
-						variant="outlined"
-						onClick={() => setHelp(!help)}
-						style={{ margin: 5 }}
-					>
-						{help ? "Bezár" : "Help"}
-					</Button>
-				</div>
-				<p className="thanks">Köszönet az ötletért és a segítségért Vikinek.</p>
-			</footer>
+			{footerVis && (
+				<footer>
+					<div>
+						{help && (
+							<p>
+								Ha a rendelés nem tölt be, kérlek ellenőrizd, hogy be vagy-e
+								jelentkezve Hurrier-be, a rendelés dátumát, illetve próbáld ki a
+								másik rendelési platformmal is. <br />
+								Bugokkal és fejlesztési javaslatokkal keresd @Árcsi-t Slacken.
+							</p>
+						)}
+						<Button
+							variant="outlined"
+							onClick={() => setHelp(!help)}
+							style={{ margin: 5 }}
+						>
+							{help ? "Ok" : "Help"}
+						</Button>
+						<Button
+							variant="outlined"
+							onClick={() => setFooterVis(false)}
+							style={{
+								position: "absolute",
+								right: 20,
+								top: 20,
+							}}
+						>
+							Hide
+						</Button>
+					</div>
+					<p className="thanks">
+						Köszönet az ötletért és a segítségért Vikinek.
+					</p>
+				</footer>
+			)}
 		</div>
 	);
 }

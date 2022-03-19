@@ -1,0 +1,27 @@
+.switch {
+	position: relative;
+
+	display: inline-block;
+	width: 38px;
+	height: 22px;
+
+	margin-left: 10px;
+	border: 3px solid #a40000;
+	border-radius: 11px;
+
+	transition: background-color 200ms ease;
+
+	.switch-button {
+		position: absolute;
+		top: 50%;
+
+		width: 16px;
+		height: 16px;
+
+		border-radius: 50%;
+
+		transform: translate(0, -50%);
+		transition: left 200ms ease, transform 200ms ease,
+			background-color 200ms ease;
+	}
+}

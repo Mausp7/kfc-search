@@ -17,9 +17,12 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { MobileDatePicker } from "@mui/lab";
 import logo from "./resources/KFC-logo.png";
 import huLocale from "date-fns/locale/hu";
+import Switch from "./components/Switch";
 
 function App() {
 	const presentDate = new Date();
+
+	const [darkMode, setDarkMode] = useState(false);
 
 	const [orderScource, setOrderScource] = useState("W");
 	const [date, setDate] = useState(presentDate);
@@ -41,7 +44,12 @@ function App() {
 		<div className="App">
 			<header>
 				<img src={logo} alt="logo" />
-				<h1>KFC sajátoldalas-rendelés kereső</h1>
+				<div className="title">
+					<h1>KFC sajátoldalas-rendelés kereső</h1>
+					<div className="dark-mode">
+						Dark Mode <Switch darkMode={darkMode} setDarkMode={setDarkMode} />
+					</div>
+				</div>
 			</header>
 			<section className="input">
 				<Card

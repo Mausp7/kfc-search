@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import DateAdapter from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import { DatePicker } from "@mui/lab";
+import { MobileDatePicker } from "@mui/lab";
 import logo from "./resources/KFC-logo.png";
 import huLocale from "date-fns/locale/hu";
 
@@ -84,9 +84,9 @@ function App() {
 										dateAdapter={DateAdapter}
 										locale={huLocale}
 									>
-										<DatePicker
+										<MobileDatePicker
 											label="Rendelési dátum"
-											orientation="landscape"
+											orientation="portrait"
 											value={date}
 											maxDate={presentDate}
 											required

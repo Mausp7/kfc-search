@@ -30,7 +30,6 @@ function App() {
 	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
-		console.log(localStorage.getItem("darkMode"));
 		if (localStorage.getItem("darkMode") === "true") {
 			setDarkMode(true);
 			document.getElementById("root").classList.add("dark");

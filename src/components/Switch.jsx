@@ -5,9 +5,10 @@ const Switch = ({ darkMode, setDarkMode }) => {
 		<div
 			className="switch"
 			style={
-				darkMode ? { backgroundColor: "#222" } : { backgroundColor: "#eee" }
+				darkMode ? { backgroundColor: "#ccc" } : { backgroundColor: "#333" }
 			}
 			onClick={() => {
+				localStorage.setItem("darkMode", !darkMode);
 				setDarkMode(!darkMode);
 				document.getElementById("root").classList.toggle("dark");
 			}}
@@ -19,9 +20,9 @@ const Switch = ({ darkMode, setDarkMode }) => {
 						? {
 								left: "99%",
 								transform: "translate(-100%, -50%)",
-								backgroundColor: "#eee",
+								backgroundColor: "#222",
 						  }
-						: { left: "1%", backgroundColor: "#222" }
+						: { left: "1%", backgroundColor: "#ddd" }
 				}
 			></div>
 		</div>

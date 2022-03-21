@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
 	Card,
 	CardContent,
@@ -22,13 +22,20 @@ import Switch from "./components/Switch";
 function App() {
 	const presentDate = new Date();
 
-	const [darkMode, setDarkMode] = useState(false);
-
 	const [orderScource, setOrderScource] = useState("W");
 	const [date, setDate] = useState(presentDate);
 	const [code, setCode] = useState("");
 	const [help, setHelp] = useState(false);
 	const [footerVis, setFooterVis] = useState(true);
+	const [darkMode, setDarkMode] = useState(false);
+
+	useEffect(() => {
+		console.log(localStorage.getItem("darkMode"));
+		if (localStorage.getItem("darkMode") === "true") {
+			setDarkMode(true);
+			document.getElementById("root").classList.add("dark");
+		}
+	}, []);
 
 	const link = `https://hu.eu.logisticsbackoffice.com/dispatcher/order_details/${orderScource}%2FD%2F${date
 		.toISOString()
@@ -57,6 +64,7 @@ function App() {
 					style={{
 						maxWidth: 320,
 						padding: 10,
+						backgroundColor: darkMode ? "#bbb" : "#fff",
 						boxShadow: "5px 5px 15px rgba(0,0,0,0.3)",
 					}}
 				>

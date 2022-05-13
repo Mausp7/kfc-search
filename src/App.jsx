@@ -117,7 +117,7 @@ function App() {
 								<Grid item xs={12}>
 									<FormLabel id="radio-label">Rendelési Platform:</FormLabel>
 									<RadioGroup
-										row
+										column
 										value={orderScource}
 										onChange={(event) => setOrderScource(event.target.value)}
 									>
@@ -129,7 +129,12 @@ function App() {
 										<FormControlLabel
 											value="M"
 											control={<Radio />}
-											label="Mobile App"
+											label="Mobil App"
+										/>
+										<FormControlLabel
+											value="C"
+											control={<Radio />}
+											label="Call Center"
 										/>
 									</RadioGroup>
 								</Grid>
